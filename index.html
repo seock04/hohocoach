@@ -1,215 +1,305 @@
-<!DOCTYPE HTML>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Forty by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HoHo Coach | Coaching</title>
+  <meta name="description" content="호호코치 최호석의 정식 코칭 프로필" />
+  <style>
+    :root {
+      --bg: #f6f1eb;
+      --surface: #fffdfc;
+      --text: #2c2623;
+      --muted: #6f655f;
+      --accent: #b76a7c;
+      --line: rgba(183,106,124,0.16);
+      --shadow: 0 18px 50px rgba(104,73,68,0.08);
+      --radius: 22px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: linear-gradient(180deg, #fbf8f5 0%, var(--bg) 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 30px 22px 84px; }
+    .topbar {
+      display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:28px;
+      padding-bottom:20px; border-bottom:1px solid rgba(44,38,35,0.08);
+    }
+    .brand { font-weight:800; letter-spacing:-0.03em; font-size:20px; }
+    .topbar-right { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    .back, .lang-toggle button {
+      text-decoration:none; border:1px solid transparent; background:transparent; color:var(--text);
+      padding:10px 12px; border-radius:999px; font-size:14px; font-weight:700; cursor:pointer; transition: background .2s ease;
+    }
+    .back:hover, .lang-toggle button:hover { background: rgba(255,255,255,0.6); }
+    .lang-toggle { display:flex; gap:6px; }
+    .lang-toggle button.active { background: var(--text); color:#fff; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    .hero { display:grid; grid-template-columns: .92fr 1.08fr; gap:24px; }
+    .panel {
+      background: rgba(255,253,252,0.86); border:1px solid rgba(44,38,35,0.06); border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-image { padding:18px; display:flex; align-items:center; }
+    .hero-copy { padding:52px 56px; }
+    .profile {
+      width:100%; height:auto; object-fit:contain; border-radius:18px; background:#f3ede8;
+      box-shadow:0 24px 60px rgba(64,47,42,0.14);
+    }
+    .eyebrow {
+      display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:800; color:var(--accent);
+      letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px;
+    }
+    .eyebrow::before { content:""; width:24px; height:1px; background:var(--accent); display:inline-block; }
+    h1 {
+      font-size: clamp(38px, 5vw, 62px); line-height:1.08; letter-spacing:-0.05em; margin:0 0 22px;
+      text-wrap: balance;
+    }
+    h2 { margin:0 0 18px; font-size:31px; letter-spacing:-0.04em; line-height:1.18; }
+    p, li { color:var(--muted); line-height:1.9; }
+    p { font-size:17px; margin:0 0 14px; text-wrap: pretty; word-break: keep-all; }
+    ul { margin:0; padding-left:20px; }
+    li { margin-bottom:10px; font-size:17px; word-break: keep-all; }
+    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:24px; }
+    .contact-inline {
+      display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:24px;
+    }
+    .contact-inline a {
+      text-decoration:none; display:inline-flex; align-items:center; background: rgba(255,255,255,0.72);
+      border:1px solid rgba(44,38,35,0.08); border-radius:999px; padding:11px 15px; font-weight:700;
+      transition: all .2s ease; color: var(--muted); font-size:14px;
+    }
+    .contact-inline a:hover {
+      transform: translateY(-1px); border-color: var(--line); color: var(--text); background: rgba(255,255,255,0.9);
+    }
+    .stat {
+      background:var(--surface); border:1px solid rgba(44,38,35,0.06); border-radius:18px; padding:18px 16px;
+    }
+    .stat strong { display:block; font-size:24px; margin-bottom:6px; color:var(--text); }
+    .stat-label { display:block; color:var(--muted); line-height:1.5; }
+    .section-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:24px; }
+    .section-card { padding:32px 30px; }
+    .section-card p:last-child, .section-card ul:last-child { margin-bottom:0; }
+    .list-block { display:block; }
+    .list-block li:last-child { margin-bottom:0; }
+    .footer { margin-top:30px; text-align:center; color:var(--muted); font-size:14px; }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+    [data-lang]{display:none !important}
+    html.lang-ko [data-lang="ko"],html.lang-en [data-lang="en"]{display:unset !important}
+    html.lang-ko p[data-lang="ko"],html.lang-en p[data-lang="en"],
+    html.lang-ko div[data-lang="ko"],html.lang-en div[data-lang="en"],
+    html.lang-ko h1[data-lang="ko"],html.lang-en h1[data-lang="en"],
+    html.lang-ko h2[data-lang="ko"],html.lang-en h2[data-lang="en"],
+    html.lang-ko a[data-lang="ko"],html.lang-en a[data-lang="en"],
+    html.lang-ko span[data-lang="ko"],html.lang-en span[data-lang="en"],
+    html.lang-ko ul[data-lang="ko"],html.lang-en ul[data-lang="en"] { display:block !important; }
+    html.lang-ko .eyebrow[data-lang="ko"],html.lang-en .eyebrow[data-lang="en"] { display:inline-flex !important; }
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="landing.html">Landing</a></li>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="#" class="button primary fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
-						</ul>
-					</nav>
+    @media (max-width: 920px) {
+      .wrap { padding: 20px 16px 64px; }
+      .hero, .section-grid, .stats { grid-template-columns:1fr; }
+      .topbar { flex-direction:column; align-items:flex-start; margin-bottom:22px; }
+      .hero-copy, .section-card { padding:26px 22px; }
+      .hero-image { padding:14px; }
+      .topbar-right { width:100%; }
+      .back, .lang-toggle button { padding:9px 11px; font-size:13px; }
+      h1 { font-size: clamp(31px, 8.4vw, 46px); line-height:1.12; margin-bottom:18px; }
+      h2 { font-size:28px; }
+      p, li { font-size:16px; line-height:1.82; }
+      .section-grid { gap:18px; margin-top:18px; }
+      .stats { gap:10px; margin-top:20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand" data-lang="ko">호호코치</div>
+      <div class="brand" data-lang="en">HoHo Coach</div>
+      <div class="topbar-right">
+        <a class="back" href="https://hohocoach.xyz/" data-lang="ko">← HoHo Coach 메인으로</a>
+        <a class="back" href="https://hohocoach.xyz/" data-lang="en">← Back to HoHo Coach Home</a>
+        <div class="lang-toggle">
+          <button id="lang-ko" onclick="setLang('ko')">한글</button>
+          <button id="lang-en" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+    </header>
 
-				<!-- Banner -->
-					<section id="banner" class="major">
-						<div class="inner">
-							<header class="major">
-								<h1>Hi, my name is Forty</h1>
-							</header>
-							<div class="content">
-								<p>A responsive site template designed by HTML5 UP<br />
-								and released under the Creative Commons.</p>
-								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">Get Started</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+    <section class="hero">
+      <div class="panel hero-image">
+        <img class="profile" src="assets/images/profile-coaching-main.jpg" alt="호호 코치 프로필 사진" />
+      </div>
+      <div class="panel hero-copy">
+        <div class="eyebrow" data-lang="ko">호호코치 공식 코칭 프로필</div>
+        <div class="eyebrow" data-lang="en">Official Coaching Profile</div>
+        <h1 data-lang="ko">불확실한 시기에도 나답게 앞으로 나아가도록 돕는 호호코치 최호석</h1>
+        <h1 data-lang="en">HoHo Coach Hoseock Choi, helping you move forward with clarity and warmth</h1>
+        <p data-lang="ko">안녕하세요, 호호 코치 최호석입니다. 저는 사람이 자신의 속도와 방식으로 삶과 일의 방향을 다시 정리하고, 불확실한 상황 속에서도 한 걸음씩 앞으로 나아가도록 돕는 코칭을 합니다. 정답을 알려주기보다, 이미 내 안에 있는 가능성과 언어를 함께 발견해 가는 과정을 더 소중하게 생각합니다.</p>
+        <p data-lang="en">Hello, I’m Hoseock Choi, HoHo Coach. I support people as they rediscover direction in life and work, and move forward one step at a time even in seasons of uncertainty. Rather than giving answers, I care more about helping you uncover the language, strength, and possibility that are already within you.</p>
+        <p data-lang="ko">제 코칭은 심리적 안전감에서 시작합니다. 마음을 지키는 안정감 위에서 지금 내가 할 수 있는 가장 현실적인 선택을 찾고, 완벽함보다 지속 가능한 실행을 통해 변화를 만들어 가도록 돕습니다. 따뜻하지만 흐리지 않고, 현실적이지만 메마르지 않은 코칭을 지향합니다.</p>
+        <p data-lang="en">My coaching begins with psychological safety. From that grounded place, I help clients find the most realistic next step they can take now, and build lasting change through sustainable action rather than perfection. I aim for coaching that is warm without being vague, and practical without losing humanity.</p>
+        <div class="stats">
+          <div class="stat">
+            <strong>600h+</strong>
+            <span class="stat-label" data-lang="ko">코칭 시간</span>
+            <span class="stat-label" data-lang="en">Coaching Hours</span>
+          </div>
+          <div class="stat">
+            <strong data-lang="ko">2023년부터</strong>
+            <strong data-lang="en">Since 2023</strong>
+            <span class="stat-label" data-lang="ko">코칭 경력</span>
+            <span class="stat-label" data-lang="en">Years of Coaching</span>
+          </div>
+          <div class="stat">
+            <strong>KPC · PCC · CiTCPC</strong>
+            <span class="stat-label" data-lang="ko">코치 인증 자격</span>
+            <span class="stat-label" data-lang="en">Coaching Credentials</span>
+          </div>
+        </div>
+        <div class="contact-inline">
+          <a href="https://www.linkedin.com/in/hoseock-choi/" target="_blank" rel="noreferrer" data-lang="ko">링크드인</a>
+          <a href="https://www.linkedin.com/in/hoseock-choi/" target="_blank" rel="noreferrer" data-lang="en">LinkedIn</a>
+          <a href="https://blog.naver.com/uncertainty-handler" target="_blank" rel="noreferrer" data-lang="ko">네이버 블로그</a>
+          <a href="https://blog.naver.com/uncertainty-handler" target="_blank" rel="noreferrer" data-lang="en">Naver Blog</a>
+          <a href="https://brunch.co.kr/@seock04" target="_blank" rel="noreferrer" data-lang="ko">브런치</a>
+          <a href="https://brunch.co.kr/@seock04" target="_blank" rel="noreferrer" data-lang="en">Brunch</a>
+          <a href="mailto:seock04@gmail.com?subject=%5BHoHo%20Coach%20Inquiry%5D" data-lang="ko">메일 보내기</a>
+          <a href="mailto:seock04@gmail.com?subject=%5BHoHo%20Coach%20Inquiry%5D" data-lang="en">Send Email</a>
+        </div>
+      </div>
+    </section>
 
-				<!-- Main -->
-					<div id="main">
+    <section class="section-grid">
+      <div class="panel section-card">
+        <h2 data-lang="ko">코칭 철학</h2>
+        <h2 data-lang="en">Coaching Philosophy</h2>
+        <p data-lang="ko">저는 코칭에서 가장 중요한 것이 ‘이 사람이 원래부터 가능성을 가진 존재임을 믿는 마음’이라고 생각합니다. 그 믿음 위에 신뢰와 공감이 쌓이고, 고객은 자신의 북극성 같은 방향을 조금씩 더 또렷하게 발견해 갑니다. 코칭은 누군가를 밀어붙이는 일이 아니라, 스스로의 힘으로 오래 갈 수 있도록 돕는 동행이라고 믿습니다.</p>
+        <p data-lang="en">To me, the heart of coaching is a deep belief that each person already carries potential within them. Trust and empathy grow from that belief, and over time clients begin to see their own North Star more clearly. Coaching is not about pushing someone harder—it is about walking with them in a way that helps their own strength last.</p>
+      </div>
+      <div class="panel section-card">
+        <h2 data-lang="ko">전문 분야</h2>
+        <h2 data-lang="en">Areas of Focus</h2>
+        <ul class="list-block" data-lang="ko">
+          <li>공감 기반 리더십 코칭</li>
+          <li>자아발견 커리어 코칭</li>
+          <li>재무 코칭</li>
+          <li>실행력 코칭</li>
+        </ul>
+        <ul class="list-block" data-lang="en">
+          <li>Empathy-Based Leadership Coaching</li>
+          <li>Self-Discovery Career Coaching</li>
+          <li>Financial Coaching</li>
+          <li>Execution Coaching</li>
+        </ul>
+      </div>
+    </section>
 
-						<!-- One -->
-							<section id="one" class="tiles">
-								<article>
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Aliquam</a></h3>
-										<p>Ipsum dolor sit amet</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Tempus</a></h3>
-										<p>feugiat amet tempus</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Magna</a></h3>
-										<p>Lorem etiam nullam</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Ipsum</a></h3>
-										<p>Nisl sed aliquam</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Consequat</a></h3>
-										<p>Ipsum dolor sit amet</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Etiam</a></h3>
-										<p>Feugiat amet tempus</p>
-									</header>
-								</article>
-							</section>
+    <section class="section-grid">
+      <div class="panel section-card">
+        <h2 data-lang="ko">경력 및 역할</h2>
+        <h2 data-lang="en">Professional Background</h2>
+        <ul class="list-block" data-lang="ko">
+          <li>한국코치협회 역량강화위원</li>
+          <li>ICF Korea 챕터 공익위원</li>
+          <li>Toastmasters 기반 리더십/멘토링 경험</li>
+          <li>삼성코칭동호회 운영</li>
+          <li>삼성전자 수석연구원</li>
+        </ul>
+        <ul class="list-block" data-lang="en">
+          <li>Korea Coach Association Capacity Building Committee</li>
+          <li>ICF Korea Chapter Public Interest Committee</li>
+          <li>Leadership and mentoring experience through Toastmasters</li>
+          <li>Samsung Coaching Club Leader</li>
+          <li>Principal Engineer, Samsung Electronics</li>
+        </ul>
+      </div>
+      <div class="panel section-card">
+        <h2 data-lang="ko">주요 코칭 경험</h2>
+        <h2 data-lang="en">Key Coaching Experience</h2>
+        <ul class="list-block" data-lang="ko">
+          <li>삼성전자 사내 임직원 개인 코칭</li>
+          <li>Toastmasters Club Coach</li>
+          <li>크몽 라이프코칭 과정 운영</li>
+          <li>삼성그룹 협력사 미래경영자 과정 코칭</li>
+          <li>삼성전자 사내 코칭 동호회 운영 및 코치 양성 과정 운영</li>
+          <li>SSAFY 멘토코치, 삼성희망디딤돌/초록우산 멘토 코치</li>
+        </ul>
+        <ul class="list-block" data-lang="en">
+          <li>Internal coaching for Samsung Electronics employees</li>
+          <li>Toastmasters Club Coach</li>
+          <li>Life coaching program operation through Kmong</li>
+          <li>Coaching for Samsung partner company future leadership program</li>
+          <li>Running internal coaching community and coach training programs</li>
+          <li>Mentor coach for SSAFY and social mentoring programs</li>
+        </ul>
+      </div>
+    </section>
 
-						<!-- Two -->
-							<section id="two">
-								<div class="inner">
-									<header class="major">
-										<h2>Massa libero</h2>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-									<ul class="actions">
-										<li><a href="landing.html" class="button next">Get Started</a></li>
-									</ul>
-								</div>
-							</section>
+    <section class="section-grid">
+      <div class="panel section-card">
+        <h2 data-lang="ko">과정 개발 및 활동</h2>
+        <h2 data-lang="en">Programs & Activities</h2>
+        <ul class="list-block" data-lang="ko">
+          <li>Cultural Talk For Diversity (DEI) 컨퍼런스 운영</li>
+          <li>꿈이룸코칭센터 독서토론 ‘도란도락’ 운영</li>
+          <li>삼성 희망디딤돌 멘토링 가이드북 개발</li>
+          <li>실행력 중심 저술 및 콘텐츠 개발</li>
+        </ul>
+        <ul class="list-block" data-lang="en">
+          <li>Operating Cultural Talk For Diversity (DEI) conference</li>
+          <li>Running reading discussion community “DoranDorak”</li>
+          <li>Developed mentoring guidebook for Samsung Hope Stepping Stone</li>
+          <li>Execution-focused writing and content development</li>
+        </ul>
+      </div>
+      <div class="panel section-card">
+        <h2 data-lang="ko">보람된 코칭 경험</h2>
+        <h2 data-lang="en">Meaningful Coaching Moments</h2>
+        <p data-lang="ko">제가 가장 보람을 느끼는 순간은 누군가가 ‘이제 다시 해볼 수 있겠다’는 마음을 회복하는 장면을 만날 때입니다. 스스로를 믿지 못하던 사람이 자신의 삶을 다시 설계하고, 지쳐 있던 사람이 가족과 일 속에서 다시 여유와 중심을 찾는 모습을 지켜보며 코칭의 힘을 더 깊이 믿게 되었습니다. 결국 코칭은 더 나은 성과만이 아니라, 더 건강한 마음과 더 단단한 삶을 함께 만들어 가는 일이라고 생각합니다.</p>
+        <p data-lang="en">The moments that stay with me most are when someone quietly begins to believe, “I can do this again.” Watching people redesign their lives, regain steadiness, and reconnect with family or work in a healthier way has deepened my trust in coaching. In the end, I believe coaching is not only about better performance, but about building a healthier heart and a steadier life.</p>
+      </div>
+    </section>
 
-					</div>
+    <section class="section-grid">
+      <div class="panel section-card">
+        <h2 data-lang="ko">고객 피드백</h2>
+        <h2 data-lang="en">Client Feedback</h2>
+        <p data-lang="ko">“늦게나마 저 자신을 천천히 돌아보고, 주변도 더 깊이 이해하게 되었습니다. 지난 3년 동안 함께해주신 시간이 정말 감사하고, 앞으로도 더 배우고 싶습니다.”</p>
+        <p data-lang="en">“I was able to reflect on myself more deeply and better understand the people around me. I’m truly grateful for the past three years together, and I still want to keep learning.”</p>
+        <p class="stat-label" data-lang="ko">장기 코칭 고객</p>
+        <p class="stat-label" data-lang="en">Long-term Coaching Client</p>
+      </div>
+      <div class="panel section-card">
+        <h2 data-lang="ko">고객 피드백</h2>
+        <h2 data-lang="en">Client Feedback</h2>
+        <p data-lang="ko">“코칭을 통해 제가 정말 원하는 것이 무엇인지 조금씩 찾아갈 수 있었고, 그것을 어떻게 실천할지 계속 고민하고 실행하면서 제 삶이 다듬어지는 느낌을 받았습니다. 목표관리시트와 액션아이템도 실제로 큰 도움이 되었습니다.”</p>
+        <p data-lang="en">“Through coaching, I gradually discovered what I truly want and how to put it into practice. As I kept reflecting and acting, I felt my life becoming more refined. The goal sheet and action items were genuinely helpful.”</p>
+        <p class="stat-label" data-lang="ko">장기 코칭 고객</p>
+        <p class="stat-label" data-lang="en">Long-term Coaching Client</p>
+      </div>
+    </section>
 
-				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
-							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
-							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <div class="footer"><span data-lang="ko">호호코치 · 코칭 프로필 · Warm Editorial</span><span data-lang="en">HoHo Coach · Coaching Profile · Warm Editorial</span></div>
+  </div>
+  <script>
+    function setLang(lang) {
+      document.documentElement.classList.remove('lang-ko', 'lang-en');
+      document.documentElement.classList.add('lang-' + lang);
+      localStorage.setItem('hohocoach-lang', lang);
+      document.getElementById('lang-ko').classList.toggle('active', lang === 'ko');
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+    }
+    (function initLang() {
+      const saved = localStorage.getItem('hohocoach-lang');
+      const browser = (navigator.language || '').toLowerCase();
+      const lang = saved || (browser.startsWith('ko') ? 'ko' : 'en');
+      setLang(lang);
+    })();
+  </script>
+</body>
 </html>
