@@ -4,5 +4,6 @@ This repository hosts Hoseock Choi's official HoHo Coach coaching profile.
 
 - Live page: https://seock04.github.io/hohocoach/
 - Main site: https://hohocoach.xyz/
+- Coaching log: https://coaching-log-gray.vercel.app/
 
 Update `index.html` and assets here when the coaching profile changes.

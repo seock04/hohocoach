@@ -38,6 +38,23 @@
     .back:hover, .lang-toggle button:hover { background: rgba(255,255,255,0.6); }
     .lang-toggle { display:flex; gap:6px; }
     .lang-toggle button.active { background: var(--text); color:#fff; }
+    .subnav {
+      display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:-8px 0 24px;
+      padding:10px; border:1px solid rgba(44,38,35,0.06); border-radius:18px;
+      background:rgba(255,253,252,0.72); box-shadow:var(--shadow);
+    }
+    .subnav-label {
+      padding:8px 10px; color:var(--muted); font-size:12px; font-weight:800;
+      letter-spacing:.06em; text-transform:uppercase;
+    }
+    .subnav a {
+      text-decoration:none; color:var(--muted); padding:10px 14px; border-radius:12px;
+      font-size:14px; font-weight:750; transition:all .2s ease;
+    }
+    .subnav a:hover { color:var(--text); background:rgba(255,255,255,0.9); }
+    .subnav a[aria-current="page"] { color:var(--text); background:#fff; }
+    .subnav .subnav-primary { color:#fff; background:var(--accent); }
+    .subnav .subnav-primary:hover { color:#fff; background:#a95d70; }
 
     .hero { display:grid; grid-template-columns: .92fr 1.08fr; gap:24px; }
     .panel {
@@ -103,6 +120,9 @@
       .wrap { padding: 20px 16px 64px; }
       .hero, .section-grid, .stats { grid-template-columns:1fr; }
       .topbar { flex-direction:column; align-items:flex-start; margin-bottom:22px; }
+      .subnav { margin:-4px 0 18px; }
+      .subnav-label { width:100%; padding-bottom:2px; }
+      .subnav a { flex:1 1 auto; text-align:center; }
       .hero-copy, .section-card { padding:26px 22px; }
       .hero-image { padding:14px; }
       .topbar-right { width:100%; }
@@ -129,6 +149,15 @@
         </div>
       </div>
     </header>
+
+    <nav class="subnav" aria-label="코칭 하위 메뉴">
+      <span class="subnav-label" data-lang="ko">코칭 메뉴</span>
+      <span class="subnav-label" data-lang="en">Coaching Menu</span>
+      <a href="./" aria-current="page" data-lang="ko">코칭 프로필</a>
+      <a href="./" aria-current="page" data-lang="en">Coaching Profile</a>
+      <a class="subnav-primary" href="https://coaching-log-gray.vercel.app/" target="_blank" rel="noreferrer" data-lang="ko">코칭 일지 작성 ↗</a>
+      <a class="subnav-primary" href="https://coaching-log-gray.vercel.app/" target="_blank" rel="noreferrer" data-lang="en">Open Coaching Log ↗</a>
+    </nav>
 
     <section class="hero">
       <div class="panel hero-image">
